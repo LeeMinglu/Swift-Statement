@@ -9,16 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var selfCompletion: (()->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loadData { [weak self] in
+            print(self?.view as Any)
+        }
+        
+    }
+    
+    func loadData(Completion:@escaping ()->()) {
+        DispatchQueue.global().async {
+            print("耗时操作")
+            self.selfCompletion = Completion
+            
+            Thread.sleep(forTimeInterval: 2.0)
+            
+            DispatchQueue.main.async {
+                print("更新UI")
+                
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
      deinit {
         print("fuck you")

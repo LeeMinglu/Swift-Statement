@@ -21,7 +21,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ztn-Rk-Va8">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztn-Rk-Va8" id="VkL-fG-ElZ">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" tableViewCell="ztn-Rk-Va8" id="VkL-fG-ElZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="Title" id="7Jz-WA-D2X">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="URU-IX-qhS">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="58s-9s-bHf"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="cellID" id="58s-9s-bHf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
