@@ -28,5 +28,26 @@ class Person: NSObject {
         super.init()
         setValuesForKeys(dict)
     }
+    
+    class func porpertyList() -> [String] {
+        
+        var count: UInt32 = 0
+        var nameList: [String] = []
+        
+       let list = class_copyPropertyList(self, &count)
+        
+        
+        for i in 0..<Int(count) {
+            let pty = list?[i]
+            let cName = property_getName(pty!)
+            
+            let name = String(utf8String: cName!)
+            
+            nameList.append(name!)
+            
+        }
+        
+        return [nameList]
+    }
 
 }

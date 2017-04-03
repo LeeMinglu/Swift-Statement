@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        Person.porpertyList()
+        
         let person = Person.init(dict: [ "name": "zhang" as AnyObject, "age": 20 as AnyObject, "title": "我是领证" as AnyObject])
         
         print("\(person.name!), \(person.title!)")
