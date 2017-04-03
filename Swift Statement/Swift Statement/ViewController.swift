@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let person = Person.init(dict: [ "name": "zhang" as AnyObject, "age": 20 as AnyObject, "title": "我是领证" as AnyObject])
+        
+        print("\(person.name!), \(person.title!)")
+        
         loadData { [weak self] in
             print(self?.view as Any)
         }
